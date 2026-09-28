@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Diggity Marketing | Grow Your Online Business</title>
+
+  <meta
+    name="description"
+    content="Digital marketing, SEO, content strategy and conversion optimization."
+  />
+
+  <style>
+    /* =========================
+       RESET
+    ========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       COLORS
+    ========================== */
+
+    :root {
+      --green: #38ad43;
+      --dark-green: #147b35;
+      --red: #df2933;
+      --dark: #292929;
+      --text: #222;
+      --muted: #697278;
+      --light: #f5f7f5;
+      --border: #e4e8e4;
+      --white: #fff;
+    }
+
+    /* =========================
+       TOP BAR
+    ========================== */
+
+    .topbar {
+      background: #222;
+      color: #ccc;
+      font-size: 13px;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: flex-end;
+      gap: 25px;
+      padding: 8px 0;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .navbar {
+      background: var(--dark);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo */
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo-icon {
+      width: 45px;
+      height: 50px;
+      border: 4px solid var(--green);
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-size: 22px;
+      clip-path: polygon(
+        50% 0,
+        100% 20%,
+        100% 80%,
+        50% 100%,
+        0 80%,
+        0 20%
+      );
+    }
+
+    .logo small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: #aaa;
+      font-weight: normal;
+    }
+
+    /* Navigation */
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #eee;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #55c94f;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 545px;
+      background:
+        radial-gradient(
+          circle at 10% 35%,
+          rgba(190, 205, 197, 0.45),
+          transparent 100px
+        ),
+        linear-gradient(
+          110deg,
+          #edf2ef,
+          #fff 50%,
+          #dfe6e2
+        );
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      min-height: 545px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #50565a;
+      font-size: 16px;
+      letter-spacing: 4px;
+      margin-bottom: 5px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      line-height: 0.98;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--dark-green);
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 540px;
+      margin-bottom: 28px;
+    }
+
+    /* Button */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      padding: 15px 28px;
+
+      background: var(--red);
+      color: white;
+
+      border-radius: 5px;
+
+      font-weight: 700;
+
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(223, 41, 51, 0.25);
+    }
+
+    /* Fake person placeholder */
+
+    .hero-person {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .person {
+      width: 410px;
+      height: 400px;
+
+      border-radius: 220px 220px 0 0;
+
+      background:
+        linear-gradient(
+          140deg,
+          #e9eeee,
+          #cbd4d0
+        );
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .person::before {
+      content: "";
+      position: absolute;
+
+      width: 140px;
+      height: 140px;
+
+      background: #efc1a2;
+
+      border-radius: 50%;
+
+      top: 55px;
+      left: 135px;
+
+      z-index: 2;
+    }
+
+    .person::after {
+      content: "";
+
+      position: absolute;
+
+      width: 190px;
+      height: 230px;
+
+      background: #183d3a;
+
+      border-radius: 100px 100px 0 0;
+
+      top: 165px;
+      left: 110px;
+    }
+
+    /* =========================
+       FEATURED
+    ========================== */
+
+    .featured {
+      padding: 25px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .featured-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .featured-title {
+      font-weight: 800;
+      white-space: nowrap;
+      color: #444;
+    }
+
+    .logos {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      color: #888;
+      font-weight: 800;
+      font-size: 19px;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section.gray {
+      background: var(--light);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 50px;
+    }
+
+    .kicker {
+      color: var(--dark-green);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .section-header h2 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin: 8px 0 15px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* =========================
+       CARDS
+    ========================== */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 20px 50px rgba(20, 30, 25, 0.1);
+    }
+
+    .icon {
+      width: 55px;
+      height: 55px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: #e9f7eb;
+      color: var(--dark-green);
+
+      font-size: 25px;
+
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .card-link {
+      color: var(--dark-green);
+      font-weight: 800;
+    }
+
+    /* =========================
+       SPLIT SECTION
+    ========================== */
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .dashboard {
+      min-height: 400px;
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #20352d,
+          #4b765e
+        );
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dashboard-card {
+      position: absolute;
+
+      background: white;
+
+      padding: 25px;
+
+      border-radius: 10px;
+
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .dashboard-card.one {
+      top: 15%;
+      left: 8%;
+      width: 60%;
+    }
+
+    .dashboard-card.two {
+      bottom: 10%;
+      right: 7%;
+      width: 52%;
+    }
+
+    .metric {
+      color: var(--dark-green);
+      font-size: 38px;
+      font-weight: 900;
+    }
+
+    .progress {
+      height: 9px;
+      background: #e5ebe7;
+      border-radius: 10px;
+      margin-top: 12px;
+      overflow: hidden;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      width: 78%;
+      background: var(--green);
+    }
+
+    .split h2 {
+      font-size: 43px;
+      line-height: 1.1;
+      margin: 10px 0 18px;
+    }
+
+    .split p {
+      color: var(--muted);
+    }
+
+    .checks {
+      list-style: none;
+      margin: 25px 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .checks li::before {
+      content: "✓";
+
+      display: inline-grid;
+      place-items: center;
+
+      width: 22px;
+      height: 22px;
+
+      margin-right: 10px;
+
+      background: #e8f7ea;
+      color: var(--dark-green);
+
+      border-radius: 50%;
+
+      font-weight: bold;
+    }
+
+    /* =========================
+       STATS
+    ========================== */
+
+    .stats {
+      background: #202522;
+      color: white;
+      padding: 50px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      gap: 25px;
+    }
+
+    .stat strong {
+      display: block;
+      color: #61ca5b;
+      font-size: 40px;
+    }
+
+    .stat span {
+      color: #c5ccc8;
+    }
+
+    /* =========================
+       TESTIMONIALS
+    ========================== */
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial {
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .testimonial p {
+      color: #555;
+      font-size: 17px;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 20px;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta {
+      padding: 75px 0;
+
+      background:
+        linear-gradient(
+          120deg,
+          #147c37,
+          #2da747
+        );
+
+      color: white;
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .cta h2 {
+      font-size: 40px;
+      line-height: 1.1;
+    }
+
+    .cta p {
+      color: #d8f1dc;
+      margin-top: 8px;
+    }
+
+    .cta .btn {
+      background: white;
+      color: var(--red);
+    }
+
+    /* =========================
+       PAGE SYSTEM
+    ========================== */
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .page-header {
+      padding: 90px 0;
+      text-align: center;
+      background: #eef4ef;
+    }
+
+    .page-header h1 {
+      font-size: 52px;
+    }
+
+    .page-header p {
+      max-width: 650px;
+      margin: 10px auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* =========================
+       BLOG
+    ========================== */
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .blog-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .blog-image {
+      height: 190px;
+
+      display: grid;
+      place-items: center;
+
+      color: white;
+      font-size: 35px;
+      font-weight: 900;
+
+      background:
+        linear-gradient(
+          135deg,
+          #165331,
+          #68bd68
+        );
+    }
+
+    .blog-content {
+      padding: 24px;
+    }
+
+    .blog-content small {
+      color: var(--dark-green);
+      font-weight: 800;
+    }
+
+    .blog-content h3 {
+      margin: 8px 0;
+      font-size: 21px;
+    }
+
+    .blog-content p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+    }
+
+    .contact-info h2 {
+      font-size: 40px;
+      line-height: 1.1;
+      margin: 10px 0 15px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+    }
+
+    .contact-box {
+      margin-top: 25px;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .contact-box h3 {
+      margin-bottom: 5px;
+    }
+
+    .contact-box p {
+      margin-bottom: 20px;
+    }
+
+    .form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .form input,
+    .form select,
+    .form textarea {
+      width: 100%;
+
+      padding: 14px 15px;
+
+      border: 1px solid #dce2de;
+
+      border-radius: 5px;
+
+      font-size: 15px;
+
+      outline: none;
+    }
+
+    .form textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .form input:focus,
+    .form select:focus,
+    .form textarea:focus {
+      border-color: var(--green);
+    }
+
+    .success {
+      display: none;
+
+      padding: 14px;
+
+      border-radius: 5px;
+
+      background: #eaf7ed;
+      color: #176d31;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    .footer {
+      background: #222;
+      color: #bfc6c2;
+      padding: 60px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer h3 {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer a {
+      display: block;
+      margin: 8px 0;
+      color: #aeb6b1;
+    }
+
+    .footer-description {
+      max-width: 330px;
+      margin-top: 18px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 40px;
+      padding-top: 20px;
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 13px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      .topbar {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 80px;
+        left: 0;
+        right: 0;
+
+        background: #252525;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 25px 4%;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero-person {
+        min-height: 320px;
+        margin-top: 30px;
+      }
+
+      .person {
+        height: 310px;
+      }
+
+      .featured-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cards,
+      .testimonials,
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .split,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .section-header h2 {
+        font-size: 34px;
+      }
+
+      .split h2 {
+        font-size: 34px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       TOP BAR
+  ========================== -->
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Free SEO Consultation</span>
+      <span>hello@diggitymarketing.demo</span>
+    </div>
+  </div>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <header class="navbar">
+
+    <div class="container nav-inner">
+
+      <a href="#home" class="logo" data-page="home">
+
+        <div class="logo-icon">
+          ↑
+        </div>
+
+        <div>
+          DIGGITY
+          <small>MARKETING</small>
+        </div>
+
+      </a>
+
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="#home" data-page="home">
+          Home
+        </a>
+
+        <a href="#services" data-page="services">
+          Services
+        </a>
+
+        <a href="#about" data-page="about">
+          About
+        </a>
+
+        <a href="#blog" data-page="blog">
+          Blog
+        </a>
+
+        <a href="#contact" data-page="contact">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section id="home" class="page active">
+
+
+      <!-- HERO -->
+
+      <section class="hero">
+
+        <div class="container hero-inner">
+
+          <div>
+
+            <div class="eyebrow">
+              GROW YOUR ONLINE BUSINESS
+            </div>
+
+            <h1>
+              GET MORE
+              <span>TRAFFIC</span>
+              <span>TO YOUR ONLINE BUSINESS</span>
+            </h1>
+
+            <p class="hero-text">
+              Performance-driven digital marketing strategies
+              that help ambitious businesses attract qualified
+              traffic, generate leads and convert more customers.
+            </p>
+
+            <a
+              href="#contact"
+              class="btn"
+              data-page="contact"
+            >
+              Work With Me →
+            </a>
+
+          </div>
+
+
+          <div class="hero-person">
+
+            <div class="person"></div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- FEATURED -->
+
+      <section class="featured">
+
+        <div class="container featured-inner">
+
+          <div class="featured-title">
+            As Featured In
+          </div>
+
+          <div class="logos">
+            <span>SEJ</span>
+            <span>ahrefs</span>
+            <span>NYT</span>
+            <span>HubSpot</span>
+            <span>Inc.</span>
+            <span>MOZ</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- SERVICES -->
+
+      <section class="section">
+
+        <div class="container">
+
+          <div class="section-header">
+
+            <div class="kicker">
+              What I Do
+            </div>
+
+            <h2>
+              Marketing built around measurable growth
+            </h2>
+
+            <p>
+              From technical SEO to conversion optimization,
+              every service is designed to move meaningful
+              business metrics.
+            </p>
+
+          </div>
+
+
+          <div class="cards">
+
+            <article class="card">
+
+              <div class="icon">
+                ⌕
+              </div>
+
+              <h3>
+                SEO & Organic Growth
+              </h3>
+
+              <p>
+                Technical audits, keyword strategy,
+                content architecture and authority building.
+              </p>
+
+              <a
+                class="card-link"
+                href="#services"
+                data-page="services"
+              >
+                Explore SEO →
+              </a>
+
+            </article>
+
+
+            <article class="card">
+
+              <div class="icon">
+                ✦
+              </div>
+
+              <h3>
+                Content Strategy
+              </h3>
+
+              <p>
+                Search-focused content systems that answer
+                customer questions and build visibility.
+              </p>
+
+              <a
+                class="card-link"
+                href="#services"
+                data-page="services"
+              >
+                Explore Content →
+              </a>
+
+            </article>
+
+
+            <article class="card">
+
+              <div class="icon">
+                ↗
+              </div>
+
+              <h3>
+                Conversion Optimization
+              </h3>
+
+              <p>
+                Landing pages, messaging and experiments
+                that turn traffic into customers.
+              </p>
+
+              <a
+                class="card-link"
+                href="#services"
+                data-page="services"
+              >
+                Explore CRO →
+              </a>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- STRATEGY -->
+
+      <section class="section gray">
+
+        <div class="container split">
+
+
+          <div class="dashboard">
+
+            <div class="dashboard-card one">
+
+              <b>
+                Organic Traffic
+              </b>
+
+              <div class="metric">
+                +186%
+              </div>
+
+              <div class="progress">
+                <span></span>
+              </div>
+
+            </div>
+
+
+            <div class="dashboard-card two">
+
+              <b>
+                Conversions
+              </b>
+
+              <div class="metric">
+                +74%
+              </div>
+
+              <div class="progress">
+                <span style="width:62%"></span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="kicker">
+              A Smarter Approach
+            </div>
+
+            <h2>
+              Strategy first. Execution second.
+              Results always.
+            </h2>
+
+            <p>
+              A clear strategy connects your website,
+              content and acquisition channels to the
+              goals that matter to your business.
+            </p>
+
+
+            <ul class="checks">
+
+              <li>
+                Research-led marketing plans
+              </li>
+
+              <li>
+                Transparent reporting and insights
+              </li>
+
+              <li>
+                Continuous testing and optimization
+              </li>
+
+              <li>
+                Strategies tailored to your market
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#about"
+              class="btn"
+              data-page="about"
+            >
+              Learn About Us
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- STATS -->
+
+      <section class="stats">
+
+        <div class="container stats-grid">
+
+          <div class="stat">
+            <strong>10+</strong>
+            <span>Years Experience</span>
+          </div>
+
+          <div class="stat">
+            <strong>250+</strong>
+            <span>Projects Delivered</span>
+          </div>
+
+          <div class="stat">
+            <strong>38M+</strong>
+            <span>Organic Visits</span>
+          </div>
+
+          <div class="stat">
+            <strong>4.9/5</strong>
+            <span>Client Satisfaction</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- TESTIMONIALS -->
+
+      <section class="section">
+
+        <div class="container">
+
+          <div class="section-header">
+
+            <div class="kicker">
+              Client Stories
+            </div>
+
+            <h2>
+              What clients say
+            </h2>
+
+          </div>
+
+
+          <div class="testimonials">
+
+            <div class="testimonial">
+
+              <p>
+                “The strategy gave our team a clear roadmap
+                and our organic pipeline became one of our
+                strongest channels.”
+              </p>
+
+              <strong>
+                — Sarah, SaaS Founder
+              </strong>
+
+            </div>
+
+
+            <div class="testimonial">
+
+              <p>
+                “We finally understood which pages and topics
+                were creating revenue, not just traffic.”
+              </p>
+
+              <strong>
+                — James, E-commerce Director
+              </strong>
+
+            </div>
+
+
+            <div class="testimonial">
+
+              <p>
+                “Fast communication, practical recommendations
+                and a real focus on measurable outcomes.”
+              </p>
+
+              <strong>
+                — Priya, Marketing Lead
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- CTA -->
+
+      <section class="cta">
+
+        <div class="container cta-inner">
+
+          <div>
+
+            <h2>
+              Ready to grow your business?
+            </h2>
+
+            <p>
+              Let's build a marketing system that works
+              harder for you.
+            </p>
+
+          </div>
+
+          <a
+            href="#contact"
+            class="btn"
+            data-page="contact"
+          >
+            Start a Conversation →
+          </a>
+
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES PAGE
+    ========================== -->
+
+    <section id="services" class="page">
+
+      <div class="page-header">
+
+        <div class="container">
+
+          <h1>
+            Services
+          </h1>
+
+          <p>
+            Flexible digital marketing services for businesses
+            that want sustainable, measurable growth.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <section class="section">
+
+        <div class="container">
+
+          <div class="cards">
+
+            <article class="card">
+
+              <div class="icon">⌕</div>
+
+              <h3>
+                Technical SEO
+              </h3>
+
+              <p>
+                Crawlability, indexing, site architecture,
+                Core Web Vitals and technical diagnostics.
+              </p>
+
+            </article>
+
+
+            <article class="card">
+
+              <div class="icon">◈</div>
+
+              <h3>
+                Keyword & Content Strategy
+              </h3>
+
+              <p>
+                Topic research and content planning aligned
+                with search intent and customer journeys.
+              </p>
+
+            </article>
+
+
+            <article class="card">
+
+              <div class="icon">↗</div>
+
+              <h3>
+                Authority Building
+              </h3>
+
+              <p>
+                Digital PR and ethical link acquisition
+                designed to improve relevance.
+              </p>
+
+            </article>
+
+
+            <article class="card">
+
+              <div class="icon">▣</div>
+
+              <h3>
+                Conversion Optimization
+              </h3>
+
+              <p>
+                Landing page analysis, messaging improvements
+                and experiment frameworks.
+              </p>
+
+            </article>
+
+
+            <article class="card">
+
+              <div class="icon">◎</div>
+
+              <h3>
+                Analytics & Reporting
+              </h3>
+
+              <p>
+                Dashboards and measurement plans that connect
+                marketing activity to business results.
+              </p>
+
+            </article>
+
+
+            <article class="card">
+
+              <div class="icon">⚡</div>
+
+              <h3>
+                Growth Consulting
+              </h3>
+
+              <p>
+                Senior-level strategic guidance and
+                execution support.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT PAGE
+    ========================== -->
+
+    <section id="about" class="page">
+
+      <div class="page-header">
+
+        <div class="container">
+
+          <h1>
+            About Us
+          </h1>
+
+          <p>
+            We combine search expertise, creative thinking
+            and disciplined experimentation to help businesses
+            grow online.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <section class="section">
+
+        <div class="container split">
+
+
+          <div class="dashboard">
+
+            <div class="dashboard-card one">
+
+              <b>
+                Our Focus
+              </b>
+
+              <div class="metric">
+                Growth
+              </div>
+
+              <p>
+                Traffic → Leads → Revenue
+              </p>
+
+            </div>
+
+
+            <div class="dashboard-card two">
+
+              <b>
+                Our Principle
+              </b>
+
+              <div class="metric">
+                Clarity
+              </div>
+
+              <p>
+                Simple strategies.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="kicker">
+              Who We Are
+            </div>
+
+            <h2>
+              A practical partner for your
+              next stage of growth.
+            </h2>
+
+            <p>
+              We believe marketing should be understandable,
+              accountable and tied to business outcomes.
+              Our work starts with research and ends with
+              measurable action.
+            </p>
+
+            <ul class="checks">
+
+              <li>
+                Experienced specialists
+              </li>
+
+              <li>
+                Clear priorities and deliverables
+              </li>
+
+              <li>
+                Collaborative working process
+              </li>
+
+              <li>
+                Reporting focused on business impact
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <!-- =========================
+         BLOG PAGE
+    ========================== -->
+
+    <section id="blog" class="page">
+
+      <div class="page-header">
+
+        <div class="container">
+
+          <h1>
+            Marketing Insights
+          </h1>
+
+          <p>
+            Practical ideas about SEO, content, analytics
+            and conversion optimization.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <section class="section">
+
+        <div class="container">
+
+          <div class="blog-grid">
+
+
+            <article class="blog-card">
+
+              <div class="blog-image">
+                SEO
+              </div>
+
+              <div class="blog-content">
+
+                <small>
+                  SEO • 8 MIN READ
+                </small>
+
+                <h3>
+                  How to build an SEO strategy
+                  that supports revenue
+                </h3>
+
+                <p>
+                  Move beyond rankings by connecting
+                  search opportunities to commercial intent.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="blog-card">
+
+              <div class="blog-image">
+                CRO
+              </div>
+
+              <div class="blog-content">
+
+                <small>
+                  CONVERSION • 6 MIN READ
+                </small>
+
+                <h3>
+                  Seven landing-page improvements
+                  worth testing
+                </h3>
+
+                <p>
+                  Simple changes to messaging, structure
+                  and trust can improve conversion.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="blog-card">
+
+              <div class="blog-image">
+                DATA
+              </div>
+
+              <div class="blog-content">
+
+                <small>
+                  ANALYTICS • 7 MIN READ
+                </small>
+
+                <h3>
+                  The metrics every growth team
+                  should watch
+                </h3>
+
+                <p>
+                  A practical framework for separating
+                  useful signals from vanity metrics.
+                </p>
+
+              </div>
+
+            </article>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT PAGE
+    ========================== -->
+
+    <section id="contact" class="page">
+
+      <div class="page-header">
+
+        <div class="container">
+
+          <h1>
+            Let's Talk
+          </h1>
+
+          <p>
+            Tell us about your business, goals and
+            where you want to grow next.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <section class="section">
+
+        <div class="container contact-grid">
+
+
+          <div class="contact-info">
+
+            <div class="kicker">
+              Start A Project
+            </div>
+
+            <h2>
+              Have a growth challenge?
+            </h2>
+
+            <p>
+              Send a few details and we'll get back
+              to you with next steps.
+            </p>
+
+
+            <div class="contact-box">
+
+              <h3>
+                Email
+              </h3>
+
+              <p>
+                hello@diggitymarketing.demo
+              </p>
+
+              <h3>
+                Availability
+              </h3>
+
+              <p>
+                Monday – Friday · 9:00 – 18:00
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <form class="form" id="contactForm">
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              required
+            />
+
+            <input
+              type="text"
+              name="company"
+              placeholder="Company / Website"
+            />
+
+            <select name="service">
+
+              <option value="">
+                What do you need help with?
+              </option>
+
+              <option>
+                SEO
+              </option>
+
+              <option>
+                Content Strategy
+              </option>
+
+              <option>
+                Conversion Optimization
+              </option>
+
+              <option>
+                Growth Consulting
+              </option>
+
+            </select>
+
+
+            <textarea
+              name="message"
+              placeholder="Tell us about your goals..."
+              required
+            ></textarea>
+
+
+            <button
+              type="submit"
+              class="btn"
+            >
+              Send Message →
+            </button>
+
+
+            <div
+              class="success"
+              id="successMessage"
+            >
+              Thanks! Your message has been captured
+              in this demo.
+            </div>
+
+          </form>
+
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <div>
+
+          <div class="logo">
+
+            <div class="logo-icon">
+              ↑
+            </div>
+
+            <div>
+              DIGGITY
+              <small>MARKETING</small>
+            </div>
+
+          </div>
+
+          <p class="footer-description">
+            Digital marketing strategies built to create
+            sustainable traffic, leads and growth.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Explore
+          </h3>
+
+          <a href="#home" data-page="home">
+            Home
+          </a>
+
+          <a href="#services" data-page="services">
+            Services
+          </a>
+
+          <a href="#about" data-page="about">
+            About
+          </a>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Resources
+          </h3>
+
+          <a href="#blog" data-page="blog">
+            Blog
+          </a>
+
+          <a href="#contact" data-page="contact">
+            Contact
+          </a>
+
+          <a href="#services" data-page="services">
+            Consulting
+          </a>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Connect
+          </h3>
+
+          <a href="#contact" data-page="contact">
+            Start a Project
+          </a>
+
+          <a href="mailto:hello@diggitymarketing.demo">
+            Email Us
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Diggity Marketing Demo.
+          All rights reserved.
+        </span>
+
+        <span>
+          Privacy · Terms
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /*
+      PAGE NAVIGATION
+    */
+
+    const pages = document.querySelectorAll(".page");
+
+    const pageLinks =
+      document.querySelectorAll("[data-page]");
+
+
+    function showPage(pageName) {
+
+      pages.forEach(function(page) {
+
+        page.classList.remove("active");
+
+        if (page.id === pageName) {
+          page.classList.add("active");
+        }
+
+      });
+
+
+      document
+        .getElementById("navLinks")
+        .classList.remove("open");
+
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+
+      history.replaceState(
+        null,
+        "",
+        "#" + pageName
+      );
+    }
+
+
+    pageLinks.forEach(function(link) {
+
+      link.addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+        const pageName =
+          this.getAttribute("data-page");
+
+        showPage(pageName);
+
+      });
+
+    });
+
+
+    /*
+      MOBILE MENU
+    */
+
+    const menuBtn =
+      document.getElementById("menuBtn");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener("click", function() {
+
+      navLinks.classList.toggle("open");
+
+    });
+
+
+    /*
+      CONTACT FORM
+    */
+
+    const contactForm =
+      document.getElementById("contactForm");
+
+    const successMessage =
+      document.getElementById("successMessage");
+
+
+    contactForm.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+        successMessage.style.display = "block";
+
+        contactForm.reset();
+
+      }
+    );
+
+
+    /*
+      OPEN PAGE FROM URL HASH
+    */
+
+    const hash =
+      window.location.hash.replace("#", "");
+
+
+    const validPages = [
+      "home",
+      "services",
+      "about",
+      "blog",
+      "contact"
+    ];
+
+
+    if (validPages.includes(hash)) {
+      showPage(hash);
+    }
+
+  </script>
+
+</body>
+</html>
